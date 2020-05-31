@@ -5,39 +5,39 @@
     </head>
     <body>
         <script type="text/javascript">
-        function textvisible(){
+        function textvisible(){   //보이지 않는 텍스트들 보이게 하기
           document.getElementById('text1').style.display='block';
           document.getElementById('text2').style.display='block';
           document.getElementById('text3').style.display='block';
         }
 
-        function textunvisible(){
+        function textunvisible(){   //화면에 있는 텍스트 숨기기
           document.getElementById('text1').style.display='none';
           document.getElementById('text2').style.display='none';
           document.getElementById('text3').style.display='none';
           document.getElementById("add1").style.display="none";
         }
-        function InfoAdd(){
+        function InfoAdd(){   //정보 추가
           textvisible();
           document.getElementById('add1').style.display='block';
         }
 
-        function InfoAdd2(){
+        function InfoAdd2(){   //정보 추가로 나타난 입력값들 읽어들이기
           localStorage.setItem("name", document.getElementById("text1").value)
           localStorage.setItem("subject", document.getElementById("text2").value)
           localStorage.setItem("grade", document.getElementById("text3").value)
         }
 
-        function InfoConfirm(){
+        function InfoConfirm(){   //정보 확인
           textunvisible();
         }
 
-        function InfoChange(){
+        function InfoChange(){   //정보 변경
           textvisible();
           document.getElementById('add1').style.display='block';
         }
 
-        function InfoDelete(){
+        function InfoDelete(){   //정보 삭제
           textunvisible();
           var answer = confirm("정말로 정보를 삭제하시겠습니까?")
           if (answer == true){
@@ -53,10 +53,10 @@
           <input type="button" id = "confirm" value="확인" onclick="InfoConfirm()">
           <input type="button" id = "change" value="바꾸기" onclick="InfoChange()">
           <input type="button" id = "delete" value="삭제" onclick="InfoDelete()">
-          <br><br><input type = "text" id="text1" value="이름" style="display:none">
-          <br><input type = "text" id="text2" value="과목" style="display:none">
-          <br><input type = "text" id="text3" value="성적" style="display:none">
-          <input type = "button" id="add1" value="입력" style="display:none" onclick="InfoAdd2()">
+          <br><br><input type = "text" id="text1" value="이름" style="display:none">  <!--처음에는 안 보이는 텍스트-->
+          <br><input type = "text" id="text2" value="과목" style="display:none">  <!--처음에는 안 보이는 텍스트-->
+          <br><input type = "text" id="text3" value="성적" style="display:none">  <!--처음에는 안 보이는 텍스트-->
+          <input type = "button" id="add1" value="입력" style="display:none" onclick="InfoAdd2()">  <!--처음에는 안 보이는 버튼-->
         </form>
     </body>
 </html>
