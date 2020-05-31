@@ -23,9 +23,9 @@
         }
 
         function InfoAdd2(){   //정보 추가로 나타난 입력값들 읽어들이기
-          localStorage.setItem("name", document.getElementById("text1").value)
-          localStorage.setItem("subject", document.getElementById("text2").value)
-          localStorage.setItem("grade", document.getElementById("text3").value)
+          localStorage.setItem( document.getElementById("StId").value , document.getElementById("text1").value)   //StId의 값의 name으로 key값을 하고 싶은데 아무리 해도 안 됨.밑에 3개 같음
+          localStorage.setItem(document.getElementById("StId").value, document.getElementById("text2").value)
+          localStorage.setItem(document.getElementById("StId").value, document.getElementById("text3").value)
         }
 
         function InfoConfirm(){   //정보 확인
