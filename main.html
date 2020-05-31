@@ -5,31 +5,58 @@
     </head>
     <body>
         <script type="text/javascript">
-        <!--
-        function infoAdd(){
-          var student = document.getElementByID("StID").value;
+        function textvisible(){
+          document.getElementById('text1').style.display='block';
+          document.getElementById('text2').style.display='block';
+          document.getElementById('text3').style.display='block';
+        }
+
+        function textunvisible(){
+          document.getElementById('text1').style.display='none';
+          document.getElementById('text2').style.display='none';
+          document.getElementById('text3').style.display='none';
+          document.getElementById("add1").style.display="none";
+        }
+        function InfoAdd(){
+          textvisible();
+          document.getElementById('add1').style.display='block';
+        }
+
+        function InfoAdd2(){
+          localStorage.setItem("name", document.getElementById("text1").value)
+          localStorage.setItem("subject", document.getElementById("text2").value)
+          localStorage.setItem("grade", document.getElementById("text3").value)
         }
 
         function InfoConfirm(){
-
+          textunvisible();
         }
 
         function InfoChange(){
-
+          textvisible();
+          document.getElementById('add1').style.display='block';
         }
 
         function InfoDelete(){
-          
+          textunvisible();
+          var answer = confirm("정말로 정보를 삭제하시겠습니까?")
+          if (answer == true){
+            localStorage.removeItem(document.getElementById("StId").value);
+          }
         }
 
 
-
-        //-->
         </script>
         <form action="">
           <input type = "text" id="StId" size="5"><br>
-          <input type="button" value="add" onclick="InfoAdd()">
-          <input type="button" value="confirm" onclick="InfoConfirm()">
+          <input type="button" id ="add" value="추가" onclick="InfoAdd()">
+          <input type="button" id = "confirm" value="확인" onclick="InfoConfirm()">
+          <input type="button" id = "change" value="바꾸기" onclick="InfoChange()">
+          <input type="button" id = "delete" value="삭제" onclick="InfoDelete()">
+          <br><br><input type = "text" id="text1" value="이름" style="display:none">
+          <br><input type = "text" id="text2" value="과목" style="display:none">
+          <br><input type = "text" id="text3" value="성적" style="display:none">
+          <input type = "button" id="add1" value="입력" style="display:none" onclick="InfoAdd2()">
         </form>
     </body>
 </html>
