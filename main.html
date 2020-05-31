@@ -30,6 +30,9 @@
 
         function InfoConfirm(){   //정보 확인
           textunvisible();
+          //만약 학번이 로컬 스토리지에 없다면
+          alert("없는 정보입니다.");
+          //로컨 스토리지에 있다면 정보 추출
         }
 
         function InfoChange(){   //정보 변경
@@ -48,7 +51,7 @@
 
         </script>
         <form action="">
-          <input type = "text" id="StId" size="5"><br>
+          학번을 입력해주세요 : <input type = "text" id="StId" size="10"><br>
           <input type="button" id ="add" value="추가" onclick="InfoAdd()">
           <input type="button" id = "confirm" value="확인" onclick="InfoConfirm()">
           <input type="button" id = "change" value="바꾸기" onclick="InfoChange()">
